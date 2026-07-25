@@ -1,19 +1,15 @@
-import { getCategorias } from "@/lib/db";
+import { getCategorias, getBlogPosts } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
-  // Validate authorization header using CRON_SECRET if configured on Vercel
-  const authHeader = request.headers.get("authorization");
-  if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    return NextResponse.json({ error: "Não autorizado" }, { status: 401 });
-  }
-
+export async function GET() {
   try {
-    // Ping database by fetching categories
+    // Ping database tables to keep Supabase active 24/7
     await getCategorias();
+    await getBlogPosts({ limit: 1 });
+
     return NextResponse.json({
       success: true,
-      message: "Database pinged successfully",
+      status: "Supabase mantido ativo com sucesso",
       timestamp: new Date().toISOString()
     });
   } catch (err: any) {
