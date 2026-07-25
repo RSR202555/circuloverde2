@@ -66,7 +66,7 @@ const INITIAL_POSTS: BlogPost[] = [
     status: "publicado",
     destaque: true,
     tempo_leitura: "6 min",
-    views: 342,
+    views: 0,
     published_at: new Date(Date.now() - 86400000 * 2).toISOString(),
     created_at: new Date(Date.now() - 86400000 * 3).toISOString(),
     updated_at: new Date(Date.now() - 86400000 * 2).toISOString()
@@ -92,7 +92,7 @@ const INITIAL_POSTS: BlogPost[] = [
     status: "publicado",
     destaque: false,
     tempo_leitura: "4 min",
-    views: 215,
+    views: 0,
     published_at: new Date(Date.now() - 86400000 * 5).toISOString(),
     created_at: new Date(Date.now() - 86400000 * 5).toISOString(),
     updated_at: new Date(Date.now() - 86400000 * 5).toISOString()
@@ -121,7 +121,7 @@ const INITIAL_POSTS: BlogPost[] = [
     status: "publicado",
     destaque: false,
     tempo_leitura: "5 min",
-    views: 189,
+    views: 0,
     published_at: new Date(Date.now() - 86400000 * 8).toISOString(),
     created_at: new Date(Date.now() - 86400000 * 8).toISOString(),
     updated_at: new Date(Date.now() - 86400000 * 8).toISOString()
