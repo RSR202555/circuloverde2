@@ -24,7 +24,7 @@
   --color-surface-container: #eaf0e7;
   --color-inverse-surface: #2c322c;
   --color-surface: #f5fbf2;
-  --color-secondary: #006e1c;
+  --color-secondary: #47a934;
   --color-surface-dim: #d6dcd3;
   --color-on-tertiary-fixed-variant: #004a78;
   --color-on-primary: #ffffff;
@@ -32,15 +32,16 @@
   --color-surface-container-high: #e4eae1;
   --color-secondary-fixed: #8afb89;
   --color-on-primary-container: #90d689;
-  --color-primary: #00450d;
+  --color-primary: #47a934;
+  --color-primary-dark: #00450d;
   --color-on-surface-variant: #41493e;
   --color-on-background: #171d18;
   --color-on-tertiary: #ffffff;
-  --color-surface-tint: #2a6b2c;
+  --color-surface-tint: #47a934;
   --color-surface-container-highest: #dee4dc;
   --color-surface-variant: #dee4dc;
   --color-inverse-primary: #91d78a;
-  --color-on-secondary-container: #00731e;
+  --color-on-secondary-container: #47a934;
   --color-tertiary-container: #005589;
   --color-on-error-container: #93000a;
   --color-tertiary: #003d65;
@@ -150,7 +151,7 @@
 .blog-content h2 {
   font-size: 1.65rem;
   font-weight: 900;
-  color: #00450d;
+  color: #47a934;
   font-family: var(--font-plus-jakarta);
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -160,7 +161,7 @@
 .blog-content h3 {
   font-size: 1.35rem;
   font-weight: 800;
-  color: #00450d;
+  color: #47a934;
   font-family: var(--font-plus-jakarta);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -176,15 +177,15 @@
 }
 
 .blog-content blockquote {
-  border-left: 4px solid #10b981;
+  border-left: 4px solid #47a934;
   padding-left: 1.25rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-style: italic;
-  color: #064e3b;
-  background-color: rgba(236, 253, 245, 0.6);
+  color: #246317;
+  background-color: rgba(71, 169, 52, 0.08);
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
