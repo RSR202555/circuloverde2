@@ -28,15 +28,15 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-20 w-full my-auto py-12">
             <div className="max-w-3xl space-y-6 text-left">
               {/* Smaller Discreet Badge */}
-              <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-emerald-400/30 backdrop-blur-md shadow-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <div className="inline-flex items-center gap-2 bg-[#47a934]/20 text-[#47a934] text-[10px] sm:text-xs font-extrabold uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-[#47a934]/40 backdrop-blur-md shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#47a934] animate-pulse"></span>
                 Revenda Oficial KREBS
               </div>
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-headline tracking-tight leading-[1.08] text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
                 O Nordeste cada <br />
-                <span className="text-emerald-400 font-black">
+                <span className="text-[#47a934] font-black">
                   vez mais verde.
                 </span>
               </h1>
@@ -50,7 +50,7 @@ export default async function HomePage() {
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
                 <Link
                   href="/catalogo"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl shadow-2xl transition-all active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#47a934] hover:bg-[#3b9329] text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl shadow-2xl transition-all active:scale-95 cursor-pointer"
                 >
                   Ver Pivôs & Catálogo de Peças
                   <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
@@ -60,7 +60,7 @@ export default async function HomePage() {
                   href="#chamado"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-black/60 hover:bg-black/80 text-white font-bold text-sm px-7 py-4 rounded-2xl border border-white/30 backdrop-blur-md shadow-lg transition-all active:scale-95"
                 >
-                  <span className="material-symbols-outlined text-[20px] text-emerald-400">support_agent</span>
+                  <span className="material-symbols-outlined text-[20px] text-[#47a934]">support_agent</span>
                   Solicitar Suporte Técnico
                 </a>
               </div>

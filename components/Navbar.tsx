@@ -28,19 +28,19 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
-            className="text-white hover:text-emerald-400 transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+            className="text-white hover:text-[#47a934] transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
           >
             Início
           </Link>
           <Link
             href="/catalogo"
-            className="text-white hover:text-emerald-400 transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+            className="text-white hover:text-[#47a934] transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
           >
             Peças
           </Link>
           <Link
             href="/eventos"
-            className="text-white hover:text-emerald-400 transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+            className="text-white hover:text-[#47a934] transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
           >
             Eventos
           </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="relative group py-2">
             <Link
               href="/culturas"
-              className="flex items-center gap-0.5 text-white hover:text-emerald-400 transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+              className="flex items-center gap-0.5 text-white hover:text-[#47a934] transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
             >
               Culturas
               <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:rotate-180 select-none">
@@ -63,9 +63,9 @@ export default function Navbar() {
                   <Link
                     key={cultura.id}
                     href={`/culturas/${cultura.id}`}
-                    className="flex items-center gap-1.5 text-xs text-white/80 hover:text-emerald-300 hover:bg-white/10 px-2.5 py-2 rounded-xl transition-all font-body font-medium"
+                    className="flex items-center gap-1.5 text-xs text-white/80 hover:text-[#47a934] hover:bg-white/10 px-2.5 py-2 rounded-xl transition-all font-body font-medium"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#47a934]"></span>
                     {cultura.nome}
                   </Link>
                 ))}
@@ -73,7 +73,7 @@ export default function Navbar() {
               <div className="mt-3 pt-3 border-t border-white/10 text-center">
                 <Link
                   href="/culturas"
-                  className="inline-block text-xs font-bold text-emerald-300 hover:text-white transition-colors font-body"
+                  className="inline-block text-xs font-bold text-[#47a934] hover:text-white transition-colors font-body"
                 >
                   Ver Todas as Culturas
                 </Link>
@@ -83,13 +83,13 @@ export default function Navbar() {
 
           <Link
             href="/blog"
-            className="text-white hover:text-emerald-400 transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+            className="text-white hover:text-[#47a934] transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
           >
             Notícias
           </Link>
           <Link
             href="/sobre"
-            className="text-white hover:text-emerald-400 transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+            className="text-white hover:text-[#47a934] transition-all duration-300 font-body text-sm font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
           >
             Sobre Nós
           </Link>
@@ -97,10 +97,10 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2 md:gap-4">
           <span className="hidden lg:flex items-center gap-2 text-xs font-bold text-white bg-black/40 px-3.5 py-1.5 rounded-full border border-white/20 backdrop-blur-md shadow-md">
-            <span className="material-symbols-outlined text-[14px] text-emerald-400">verified</span>
+            <span className="material-symbols-outlined text-[14px] text-[#47a934]">verified</span>
             5000+ Produtores Atendidos
           </span>
-          <a href="#chamado" className="hidden sm:block bg-emerald-400 text-emerald-950 px-6 py-2.5 rounded-xl font-body font-black text-xs uppercase tracking-wider hover:bg-emerald-300 transition-all active:scale-95 shadow-xl">
+          <a href="#chamado" className="hidden sm:block bg-[#47a934] text-white px-6 py-2.5 rounded-xl font-body font-black text-xs uppercase tracking-wider hover:bg-[#3b9329] transition-all active:scale-95 shadow-xl">
             Fale Conosco
           </a>
 
