@@ -8,9 +8,15 @@ export default function Footer() {
         <div className="col-span-1">
           <Link
             href="/"
-            className="text-2xl font-black text-emerald-50 mb-8 block tracking-tighter font-headline"
+            className="text-2xl font-black text-emerald-50 mb-8 flex items-center gap-2.5 tracking-tighter font-headline"
           >
-            Círculo Verde
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/Prancheta 2.png"
+              alt="Logo Círculo Verde"
+              className="w-8 h-8 object-contain"
+            />
+            <span>Círculo <span className="text-[#47a934]">Verde</span></span>
           </Link>
           <p className="text-emerald-200/60 text-sm leading-relaxed mb-8">
             Soluções avançadas para irrigação de precisão. Tecnologia KREBS a

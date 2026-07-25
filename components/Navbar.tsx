@@ -13,9 +13,15 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-6 md:px-8 py-5 max-w-7xl mx-auto">
         <Link
           href="/"
-          className="text-2xl font-black text-white tracking-tighter font-headline flex items-center gap-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+          className="text-2xl font-black text-white tracking-tighter font-headline flex items-center gap-2.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group"
         >
-          Círculo <span className="text-emerald-400">Verde</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/Prancheta 2.png"
+            alt="Logo Círculo Verde"
+            className="w-8 h-8 md:w-9 md:h-9 object-contain group-hover:scale-105 transition-transform"
+          />
+          <span>Círculo <span className="text-[#47a934]">Verde</span></span>
         </Link>
         
         {/* Desktop Navigation Links */}
