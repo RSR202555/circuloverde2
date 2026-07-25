@@ -115,7 +115,7 @@ export default async function BlogPostViewPage({
       <div className="max-w-[680px] mx-auto px-6 font-body text-on-surface leading-relaxed space-y-6">
         <div
           dangerouslySetInnerHTML={{ __html: post.conteudo }}
-          className="prose prose-emerald lg:prose-lg max-w-none text-on-surface-variant space-y-4"
+          className="blog-content max-w-none"
         />
 
         {/* Article Tags */}

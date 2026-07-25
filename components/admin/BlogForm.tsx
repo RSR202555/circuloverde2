@@ -32,11 +32,19 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
   const [activeTab, setActiveTab] = useState<"edit" | "preview">("edit");
   const [errorMsg, setErrorMsg] = useState("");
 
+  // Helper to clean technical developer classes for simple editing
+  function cleanHtmlForEditor(rawHtml: string): string {
+    if (!rawHtml) return "";
+    return rawHtml
+      .replace(/\s*class="[^"]*"/gi, "")
+      .replace(/\s*class='[^']*'/gi, "");
+  }
+
   const [titulo, setTitulo] = useState(initialData?.titulo || "");
   const [slug, setSlug] = useState(initialData?.slug || "");
   const [autoSlug, setAutoSlug] = useState(!isEdit);
   const [subtitulo, setSubtitulo] = useState(initialData?.subtitulo || "");
-  const [conteudo, setConteudo] = useState(initialData?.conteudo || "");
+  const [conteudo, setConteudo] = useState(cleanHtmlForEditor(initialData?.conteudo || ""));
   const [capaUrl, setCapaUrl] = useState(initialData?.capa_url || PRESET_IMAGES[0].url);
   const [autor, setAutor] = useState(initialData?.autor || "Equipe Círculo Verde");
   const [categoria, setCategoria] = useState(initialData?.categoria || "Agronomia");
@@ -64,10 +72,23 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
     const selectedText = conteudo.substring(start, end);
-    const replacement = `${tagStart}${selectedText || "Texto aqui"}${tagEnd}`;
+    const replacement = `${tagStart}${selectedText || "Digite o texto aqui"}${tagEnd}`;
 
     const newContent = conteudo.substring(0, start) + replacement + conteudo.substring(end);
     setConteudo(newContent);
+  }
+
+  function processContentForSave(rawText: string): string {
+    if (!rawText) return "";
+    let text = rawText.trim();
+    // If user typed plain text paragraphs without tags, wrap blank lines in paragraphs automatically
+    if (!text.includes("<p>") && !text.includes("<h2>") && !text.includes("<h3>")) {
+      text = text
+        .split(/\n\s*\n/)
+        .map((p) => `<p>${p.trim().replace(/\n/g, "<br />")}</p>`)
+        .join("\n\n");
+    }
+    return text;
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -80,11 +101,13 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
     setLoading(true);
     setErrorMsg("");
 
+    const formattedContent = processContentForSave(conteudo);
+
     const payload = {
       titulo,
       slug: slug || titulo.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
       subtitulo,
-      conteudo,
+      conteudo: formattedContent,
       capa_url: capaUrl,
       autor,
       categoria,
@@ -118,7 +141,7 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 max-w-5xl mx-auto pb-16">
+    <form onSubmit={handleSubmit} className="space-y-8 max-w-5xl mx-auto pb-16 font-body">
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/10">
         <div>
@@ -233,7 +256,7 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                   }`}
                 >
                   <span className="material-symbols-outlined text-[16px] inline-block align-middle mr-1">edit</span>
-                  Editor de Conteúdo
+                  Editor Simplificado
                 </button>
                 <button
                   type="button"
@@ -248,72 +271,79 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                   Pré-visualização
                 </button>
               </div>
-              <span className="text-xs text-on-surface-variant/60 font-semibold hidden sm:inline-block">
-                Aceita HTML formatado e tags editoriais
+              <span className="text-xs text-emerald-800 font-bold hidden sm:inline-flex items-center gap-1">
+                <span className="material-symbols-outlined text-[14px]">check_circle</span>
+                Modo Fácil (Sem código técnico)
               </span>
             </div>
 
             {activeTab === "edit" ? (
               <div className="p-6">
-                {/* Editor Toolbar */}
-                <div className="flex flex-wrap items-center gap-1.5 p-2 bg-surface-container-low rounded-xl mb-4 border border-outline-variant/10 text-xs">
+                {/* Clean Editor Toolbar */}
+                <div className="flex flex-wrap items-center gap-2 p-2.5 bg-surface-container-low rounded-xl mb-4 border border-outline-variant/10 text-xs">
                   <button
                     type="button"
-                    title="Subtítulo H2"
-                    onClick={() => insertFormatting('<h2 class="text-2xl font-black text-primary font-headline mt-8 mb-4">', '</h2>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10"
+                    title="Título da Seção"
+                    onClick={() => insertFormatting("<h2>", "</h2>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
-                    H2
+                    <span className="text-xs font-black">H2</span>
+                    Título
                   </button>
                   <button
                     type="button"
-                    title="Subtítulo H3"
-                    onClick={() => insertFormatting('<h3 class="text-xl font-bold text-primary font-headline mt-6 mb-3">', '3</h2>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10"
+                    title="Subtítulo"
+                    onClick={() => insertFormatting("<h3>", "</h3>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
-                    H3
+                    <span className="text-xs font-black">H3</span>
+                    Subtítulo
                   </button>
+
                   <div className="w-[1px] h-6 bg-outline-variant/20 mx-1"></div>
+
                   <button
                     type="button"
                     title="Negrito"
-                    onClick={() => insertFormatting('<strong>', '</strong>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10"
+                    onClick={() => insertFormatting("<b>", "</b>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs"
                   >
-                    <b>B</b>
+                    <b>N</b> Negrito
                   </button>
                   <button
                     type="button"
                     title="Itálico"
-                    onClick={() => insertFormatting('<em>', '</em>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-serif italic text-primary transition-colors border border-outline-variant/10"
+                    onClick={() => insertFormatting("<i>", "</i>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-serif italic text-primary transition-colors border border-outline-variant/10 shadow-2xs"
                   >
-                    <i>I</i>
+                    <i>I</i> Itálico
                   </button>
+
                   <div className="w-[1px] h-6 bg-outline-variant/20 mx-1"></div>
+
                   <button
                     type="button"
-                    title="Citação"
-                    onClick={() => insertFormatting('<blockquote class="border-l-4 border-emerald-500 pl-4 py-2 my-6 italic text-emerald-950 bg-emerald-50/50 rounded-r-xl font-body">"', '"</blockquote>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 flex items-center gap-1"
+                    title="Citação de Destaque"
+                    onClick={() => insertFormatting("<blockquote>", "</blockquote>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="material-symbols-outlined text-[14px]">format_quote</span>
                     Citação
                   </button>
                   <button
                     type="button"
-                    title="Caixa Destaque / Dica"
-                    onClick={() => insertFormatting('<div class="bg-primary/5 p-6 rounded-2xl my-8 border border-primary/10">\n  <h3 class="text-lg font-bold text-primary font-headline mb-2">💡 Dica Técnica</h3>\n  <p class="text-sm text-on-surface-variant font-body">', '</p>\n</div>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 flex items-center gap-1"
+                    title="Caixa de Dica"
+                    onClick={() => insertFormatting('<div class="dica">\n  <b>💡 Dica Técnica:</b> ', '\n</div>')}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="material-symbols-outlined text-[14px]">lightbulb</span>
                     Caixa Dica
                   </button>
                   <button
                     type="button"
-                    title="Lista"
-                    onClick={() => insertFormatting('<ul class="list-disc pl-6 space-y-2 text-on-surface-variant font-body mb-6">\n  <li>', '</li>\n</ul>')}
-                    className="px-2.5 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 flex items-center gap-1"
+                    title="Lista com Marcadores"
+                    onClick={() => insertFormatting("<ul>\n  <li>", "</li>\n  <li>Outro item</li>\n</ul>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="material-symbols-outlined text-[14px]">format_list_bulleted</span>
                     Lista
@@ -322,20 +352,20 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
 
                 <textarea
                   id="conteudo-textarea"
-                  rows={16}
+                  rows={14}
                   value={conteudo}
                   onChange={(e) => setConteudo(e.target.value)}
-                  placeholder="Escreva o artigo da matéria aqui... Você pode utilizar parágrados <p> e formatação..."
-                  className="w-full font-mono text-sm p-4 rounded-xl border border-outline-variant/20 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all leading-relaxed"
+                  placeholder="Escreva o texto da matéria aqui normalmente. Pressione Enter duas vezes para criar um novo parágrafo. Selecione trechos do texto e clique nos botões acima para formatar em Título, Negrito, Citação, etc..."
+                  className="w-full font-body text-base text-on-surface leading-relaxed p-5 rounded-2xl border border-outline-variant/20 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all shadow-inner bg-surface-container-lowest"
                   required
                 />
               </div>
             ) : (
-              <div className="p-8 prose max-w-none">
+              <div className="p-8">
                 {conteudo ? (
                   <div
-                    dangerouslySetInnerHTML={{ __html: conteudo }}
-                    className="space-y-4 font-body text-on-surface-variant leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: processContentForSave(conteudo) }}
+                    className="blog-content max-w-none"
                   />
                 ) : (
                   <p className="text-on-surface-variant/40 italic text-center py-12">

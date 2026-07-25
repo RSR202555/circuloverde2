@@ -145,3 +145,67 @@
 .animate-water-spray {
   animation: waterSprayDrop 2.5s ease-out infinite;
 }
+
+/* Automatic Blog Article Typography (No HTML classes required) */
+.blog-content h2 {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #00450d;
+  font-family: var(--font-plus-jakarta);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.blog-content h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #00450d;
+  font-family: var(--font-plus-jakarta);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #41493e;
+  font-family: var(--font-inter);
+  margin-bottom: 1.25rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #10b981;
+  padding-left: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #064e3b;
+  background-color: rgba(236, 253, 245, 0.6);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #41493e;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.blog-content .dica {
+  background-color: rgba(0, 69, 13, 0.05);
+  padding: 1.25rem;
+  border-radius: 1rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(0, 69, 13, 0.12);
+}
