@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { BlogPost } from "@/lib/types";
 import Link from "next/link";
@@ -28,29 +28,31 @@ const PRESET_IMAGES = [
 
 export default function BlogForm({ initialData, isEdit = false }: BlogFormProps) {
   const router = useRouter();
+  const editorRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"edit" | "preview">("edit");
   const [errorMsg, setErrorMsg] = useState("");
-
-  // Helper to clean technical developer classes for simple editing
-  function cleanHtmlForEditor(rawHtml: string): string {
-    if (!rawHtml) return "";
-    return rawHtml
-      .replace(/\s*class="[^"]*"/gi, "")
-      .replace(/\s*class='[^']*'/gi, "");
-  }
 
   const [titulo, setTitulo] = useState(initialData?.titulo || "");
   const [slug, setSlug] = useState(initialData?.slug || "");
   const [autoSlug, setAutoSlug] = useState(!isEdit);
   const [subtitulo, setSubtitulo] = useState(initialData?.subtitulo || "");
-  const [conteudo, setConteudo] = useState(cleanHtmlForEditor(initialData?.conteudo || ""));
+  const [conteudo, setConteudo] = useState(initialData?.conteudo || "");
   const [capaUrl, setCapaUrl] = useState(initialData?.capa_url || PRESET_IMAGES[0].url);
   const [autor, setAutor] = useState(initialData?.autor || "Equipe Círculo Verde");
   const [categoria, setCategoria] = useState(initialData?.categoria || "Agronomia");
   const [tempoLeitura, setTempoLeitura] = useState(initialData?.tempo_leitura || "5 min");
   const [status, setStatus] = useState<"rascunho" | "publicado">(initialData?.status || "publicado");
   const [destaque, setDestaque] = useState(initialData?.destaque ?? false);
+
+  // Initialize visual editor content
+  useEffect(() => {
+    if (editorRef.current) {
+      const initialHtml = initialData?.conteudo || "<p>Escreva o texto da matéria aqui...</p>";
+      editorRef.current.innerHTML = initialHtml;
+      setConteudo(initialHtml);
+    }
+  }, [initialData]);
 
   // Auto-generate slug when title changes
   useEffect(() => {
@@ -65,35 +67,20 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
     }
   }, [titulo, autoSlug]);
 
-  function insertFormatting(tagStart: string, tagEnd: string = "") {
-    const textarea = document.getElementById("conteudo-textarea") as HTMLTextAreaElement;
-    if (!textarea) return;
-
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const selectedText = conteudo.substring(start, end);
-    const replacement = `${tagStart}${selectedText || "Digite o texto aqui"}${tagEnd}`;
-
-    const newContent = conteudo.substring(0, start) + replacement + conteudo.substring(end);
-    setConteudo(newContent);
-  }
-
-  function processContentForSave(rawText: string): string {
-    if (!rawText) return "";
-    let text = rawText.trim();
-    // If user typed plain text paragraphs without tags, wrap blank lines in paragraphs automatically
-    if (!text.includes("<p>") && !text.includes("<h2>") && !text.includes("<h3>")) {
-      text = text
-        .split(/\n\s*\n/)
-        .map((p) => `<p>${p.trim().replace(/\n/g, "<br />")}</p>`)
-        .join("\n\n");
+  function execCommand(command: string, value: string = "") {
+    if (typeof document !== "undefined") {
+      document.execCommand(command, false, value);
+      if (editorRef.current) {
+        setConteudo(editorRef.current.innerHTML);
+      }
     }
-    return text;
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!titulo.trim() || !conteudo.trim()) {
+    const finalContent = editorRef.current ? editorRef.current.innerHTML : conteudo;
+
+    if (!titulo.trim() || !finalContent.trim()) {
       setErrorMsg("Título e conteúdo são campos obrigatórios.");
       return;
     }
@@ -101,13 +88,11 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
     setLoading(true);
     setErrorMsg("");
 
-    const formattedContent = processContentForSave(conteudo);
-
     const payload = {
       titulo,
       slug: slug || titulo.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
       subtitulo,
-      conteudo: formattedContent,
+      conteudo: finalContent,
       capa_url: capaUrl,
       autor,
       categoria,
@@ -256,7 +241,7 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                   }`}
                 >
                   <span className="material-symbols-outlined text-[16px] inline-block align-middle mr-1">edit</span>
-                  Editor Simplificado
+                  Editor Visual
                 </button>
                 <button
                   type="button"
@@ -272,20 +257,20 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                 </button>
               </div>
               <span className="text-xs text-emerald-800 font-bold hidden sm:inline-flex items-center gap-1">
-                <span className="material-symbols-outlined text-[14px]">check_circle</span>
-                Modo Fácil (Sem código técnico)
+                <span className="material-symbols-outlined text-[14px]">auto_awesome</span>
+                Editor 100% Visual (Estilo Word)
               </span>
             </div>
 
             {activeTab === "edit" ? (
               <div className="p-6">
-                {/* Clean Editor Toolbar */}
-                <div className="flex flex-wrap items-center gap-2 p-2.5 bg-surface-container-low rounded-xl mb-4 border border-outline-variant/10 text-xs">
+                {/* Visual Editor Toolbar */}
+                <div className="flex flex-wrap items-center gap-2 p-2.5 bg-surface-container-low rounded-xl mb-4 border border-outline-variant/10 text-xs select-none">
                   <button
                     type="button"
-                    title="Título da Seção"
-                    onClick={() => insertFormatting("<h2>", "</h2>")}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
+                    title="Título Principal"
+                    onClick={() => execCommand("formatBlock", "<h2>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="text-xs font-black">H2</span>
                     Título
@@ -293,11 +278,19 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                   <button
                     type="button"
                     title="Subtítulo"
-                    onClick={() => insertFormatting("<h3>", "</h3>")}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
+                    onClick={() => execCommand("formatBlock", "<h3>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="text-xs font-black">H3</span>
                     Subtítulo
+                  </button>
+                  <button
+                    type="button"
+                    title="Texto Normal / Parágrafo"
+                    onClick={() => execCommand("formatBlock", "<p>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-medium text-on-surface transition-colors border border-outline-variant/10 shadow-2xs"
+                  >
+                    Parágrafo
                   </button>
 
                   <div className="w-[1px] h-6 bg-outline-variant/20 mx-1"></div>
@@ -305,16 +298,16 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                   <button
                     type="button"
                     title="Negrito"
-                    onClick={() => insertFormatting("<b>", "</b>")}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs"
+                    onClick={() => execCommand("bold")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs"
                   >
                     <b>N</b> Negrito
                   </button>
                   <button
                     type="button"
                     title="Itálico"
-                    onClick={() => insertFormatting("<i>", "</i>")}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-serif italic text-primary transition-colors border border-outline-variant/10 shadow-2xs"
+                    onClick={() => execCommand("italic")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-serif italic text-primary transition-colors border border-outline-variant/10 shadow-2xs"
                   >
                     <i>I</i> Itálico
                   </button>
@@ -324,47 +317,55 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
                   <button
                     type="button"
                     title="Citação de Destaque"
-                    onClick={() => insertFormatting("<blockquote>", "</blockquote>")}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
+                    onClick={() => execCommand("formatBlock", "<blockquote>")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="material-symbols-outlined text-[14px]">format_quote</span>
                     Citação
                   </button>
                   <button
                     type="button"
-                    title="Caixa de Dica"
-                    onClick={() => insertFormatting('<div class="dica">\n  <b>💡 Dica Técnica:</b> ', '\n</div>')}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
-                  >
-                    <span className="material-symbols-outlined text-[14px]">lightbulb</span>
-                    Caixa Dica
-                  </button>
-                  <button
-                    type="button"
                     title="Lista com Marcadores"
-                    onClick={() => insertFormatting("<ul>\n  <li>", "</li>\n  <li>Outro item</li>\n</ul>")}
-                    className="px-3 py-1.5 bg-white hover:bg-primary/10 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
+                    onClick={() => execCommand("insertUnorderedList")}
+                    className="px-3 py-1.5 bg-white hover:bg-primary/10 active:bg-primary/20 rounded-lg font-bold text-primary transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
                   >
                     <span className="material-symbols-outlined text-[14px]">format_list_bulleted</span>
                     Lista
                   </button>
+                  <button
+                    type="button"
+                    title="Limpar Formatação"
+                    onClick={() => execCommand("removeFormat")}
+                    className="px-2.5 py-1.5 bg-white hover:bg-red-50 text-red-600 rounded-lg font-semibold transition-colors border border-outline-variant/10 shadow-2xs flex items-center gap-1"
+                  >
+                    <span className="material-symbols-outlined text-[14px]">format_clear</span>
+                    Limpar
+                  </button>
                 </div>
 
-                <textarea
-                  id="conteudo-textarea"
-                  rows={14}
-                  value={conteudo}
-                  onChange={(e) => setConteudo(e.target.value)}
-                  placeholder="Escreva o texto da matéria aqui normalmente. Pressione Enter duas vezes para criar um novo parágrafo. Selecione trechos do texto e clique nos botões acima para formatar em Título, Negrito, Citação, etc..."
-                  className="w-full font-body text-base text-on-surface leading-relaxed p-5 rounded-2xl border border-outline-variant/20 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all shadow-inner bg-surface-container-lowest"
-                  required
+                {/* ContentEditable Visual Area */}
+                <div
+                  ref={editorRef}
+                  contentEditable
+                  suppressContentEditableWarning
+                  onInput={() => {
+                    if (editorRef.current) {
+                      setConteudo(editorRef.current.innerHTML);
+                    }
+                  }}
+                  onBlur={() => {
+                    if (editorRef.current) {
+                      setConteudo(editorRef.current.innerHTML);
+                    }
+                  }}
+                  className="w-full min-h-[380px] font-body text-base text-on-surface leading-relaxed p-6 rounded-2xl border border-outline-variant/20 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none bg-white blog-content shadow-inner overflow-y-auto cursor-text"
                 />
               </div>
             ) : (
               <div className="p-8">
                 {conteudo ? (
                   <div
-                    dangerouslySetInnerHTML={{ __html: processContentForSave(conteudo) }}
+                    dangerouslySetInnerHTML={{ __html: conteudo }}
                     className="blog-content max-w-none"
                   />
                 ) : (
