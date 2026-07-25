@@ -1,0 +1,695 @@
+{
+  "categorias": [
+    {
+      "id": "pecas",
+      "nome": "Peças e Componentes Originais",
+      "icone": "build",
+      "produtos": [
+        {
+          "sku": "K-001",
+          "nome": "Anel coletor(1)",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Anel coletor(1).jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Anel coletor(1). Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-002",
+          "nome": "Anel coletor",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Anel coletor.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Anel coletor. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-003",
+          "nome": "Anilha",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Anilha.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Anilha. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-004",
+          "nome": "Aspersor tradicional Up3 I-wob",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Aspersor tradicional Up3 I-wob.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Aspersor tradicional Up3 I-wob. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-005",
+          "nome": "Bocais (R$9,05)",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Bocais (R$9,05).jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Bocais (R$9,05). Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-006",
+          "nome": "Bolsa 14” flange Din",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Bolsa 14” flange Din.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Bolsa 14” flange Din. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-007",
+          "nome": "Borracha da junta do cardan",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Borracha da junta do cardan.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Borracha da junta do cardan. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-008",
+          "nome": "Cantoneiras",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Cantoneiras.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Cantoneiras. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-009",
+          "nome": "Chapa de fixação das estabilizadoras",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Chapa de fixação das estabilizadoras.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Chapa de fixação das estabilizadoras. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-010",
+          "nome": "Cj. Da coluna da torre central",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Cj. Da coluna da torre central.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Cj. Da coluna da torre central. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-011",
+          "nome": "Cj. Da haste do alinhamento",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Cj. Da haste do alinhamento.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Cj. Da haste do alinhamento. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-012",
+          "nome": "Cj. Da redução conc. 8. 5_8 x 5 com tampão",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Cj. Da redução conc. 8. 5_8 x 5 com tampão.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Cj. Da redução conc. 8. 5_8 x 5 com tampão. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-013",
+          "nome": "Cj. Do Aro 8.5_8” com haste",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Cj. Do Aro 8.5_8” com haste.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Cj. Do Aro 8.5_8” com haste. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-014",
+          "nome": "Cj. Pendural flex mangueira de 3_4",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Cj. Pendural flex mangueira de 3_4.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Cj. Pendural flex mangueira de 3_4. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-015",
+          "nome": "Contator",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Contator.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Contator. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-016",
+          "nome": "Corpo do acoplamento",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Corpo do acoplamento.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Corpo do acoplamento. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-017",
+          "nome": "Curva da saída P_ aspersor (bengala)",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Curva da saída P_ aspersor (bengala).jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Curva da saída P_ aspersor (bengala). Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-018",
+          "nome": "Curva de 90° 10”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Curva de 90° 10”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Curva de 90° 10”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-019",
+          "nome": "Curva de 90° 12”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Curva de 90° 12”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Curva de 90° 12”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-020",
+          "nome": "Curva de 90° de “10” flange Dim",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Curva de 90° de “10” flange Dim.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Curva de 90° de “10” flange Dim. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-021",
+          "nome": "Câmara de ar 14-9-24",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Câmara de ar 14-9-24.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Câmara de ar 14-9-24. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-022",
+          "nome": "Disjuntor Linha DA3",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Disjuntor Linha DA3.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Disjuntor Linha DA3. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-023",
+          "nome": "Estabilizador N° 1",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Estabilizador N° 1.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Estabilizador N° 1. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-024",
+          "nome": "Esticador",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Esticador.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Esticador. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-025",
+          "nome": "Guarnições de borr. Flange",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Guarnições de borr. Flange.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Guarnições de borr. Flange. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-026",
+          "nome": "Guarnições",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Guarnições.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Guarnições. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-027",
+          "nome": "Juntas do cardan",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Juntas do cardan.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Juntas do cardan. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-028",
+          "nome": "Manômetro com glicerina",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Manômetro com glicerina.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Manômetro com glicerina. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-029",
+          "nome": "Motor redutor",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Motor redutor.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Motor redutor. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-030",
+          "nome": "Pasta lubrificante",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Pasta lubrificante.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Pasta lubrificante. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-031",
+          "nome": "Pneu 12-4-28",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Pneu 12-4-28.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Pneu 12-4-28. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-032",
+          "nome": "Pneu montado 12-4-24",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Pneu montado 12-4-24.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Pneu montado 12-4-24. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-033",
+          "nome": "Protetor do cardan",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Protetor do cardan.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Protetor do cardan. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-034",
+          "nome": "Redutor de roda",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Redutor de roda.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Redutor de roda. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-035",
+          "nome": "Redução concêntrica 14”Din x 8 Din",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Redução concêntrica 14”Din x 8 Din.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Redução concêntrica 14”Din x 8 Din. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-036",
+          "nome": "Redução excêntrica 14” Din x 8 Din",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Redução excêntrica 14” Din x 8 Din.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Redução excêntrica 14” Din x 8 Din. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-037",
+          "nome": "Redução excêntrica 14” Din x 8” Din",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Redução excêntrica 14” Din x 8” Din.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Redução excêntrica 14” Din x 8” Din. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-038",
+          "nome": "Reforço da perna da torre",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Reforço da perna da torre.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Reforço da perna da torre. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-039",
+          "nome": "Reforço da treliças",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Reforço da treliças.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Reforço da treliças. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-040",
+          "nome": "Registro de gaveta 250 mm",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Registro de gaveta 250 mm.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Registro de gaveta 250 mm. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-041",
+          "nome": "Roda montada 12-4-24",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Roda montada 12-4-24.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Roda montada 12-4-24. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-042",
+          "nome": "Tampa final do balanço com tampão do balanço",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tampa final do balanço com tampão do balanço.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tampa final do balanço com tampão do balanço. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-043",
+          "nome": "Te 10” x 10” x 10”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Te 10” x 10” x 10”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Te 10” x 10” x 10”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-044",
+          "nome": "Tirantes",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tirantes.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tirantes. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-045",
+          "nome": "Tubo de 1 m 10”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tubo de 1 m 10”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tubo de 1 m 10”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-046",
+          "nome": "Tubo de 2 m de 10”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tubo de 2 m de 10”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tubo de 2 m de 10”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-047",
+          "nome": "Tubo de 300mm",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tubo de 300mm.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tubo de 300mm. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-048",
+          "nome": "Tubo de subida e o Cj. Da curva do tubo de subida com plug",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tubo de subida e o Cj. Da curva do tubo de subida com plug.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tubo de subida e o Cj. Da curva do tubo de subida com plug. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-049",
+          "nome": "Tubos defofo 150 mm",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tubos defofo 150 mm.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tubos defofo 150 mm. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-050",
+          "nome": "Tubos PEAD DN 250 PN 16",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tubos PEAD DN 250 PN 16.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tubos PEAD DN 250 PN 16. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-051",
+          "nome": "Tudo 1m de 10”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Tudo 1m de 10”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Tudo 1m de 10”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-052",
+          "nome": "Válvula de pé 12”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Válvula de pé 12”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Válvula de pé 12”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-053",
+          "nome": "Válvula de pé 8”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Válvula de pé 8”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Válvula de pé 8”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-054",
+          "nome": "Válvula de retenção 12”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Válvula de retenção 12”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Válvula de retenção 12”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-055",
+          "nome": "Válvula de retenção 8”",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Válvula de retenção 8”.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Válvula de retenção 8”. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-056",
+          "nome": "Válvula portinhola única 150 mm",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Válvula portinhola única 150 mm.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Válvula portinhola única 150 mm. Fabricada sob rigorosos padrões de qualidade."
+        },
+        {
+          "sku": "K-057",
+          "nome": "Válvula portinhola única 200 mm",
+          "badge": "KREBS Original",
+          "disponibilidade": "Consulte Estoque",
+          "imagem": "/produtos/Válvula portinhola única 200 mm.jpg",
+          "especificacoes": [
+            "Peça Genuína",
+            "Garantia de Qualidade"
+          ],
+          "descricao": "Peça de reposição original Círculo Verde: Válvula portinhola única 200 mm. Fabricada sob rigorosos padrões de qualidade."
+        }
+      ]
+    }
+  ]
+}
