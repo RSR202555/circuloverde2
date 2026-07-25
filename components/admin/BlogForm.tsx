@@ -76,6 +76,24 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
     }
   }
 
+  function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 8 * 1024 * 1024) {
+      alert("Por favor escolha uma imagem de até 8MB.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      if (event.target?.result) {
+        setCapaUrl(event.target.result as string);
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const finalContent = editorRef.current ? editorRef.current.innerHTML : conteudo;
@@ -491,19 +509,44 @@ export default function BlogForm({ initialData, isEdit = false }: BlogFormProps)
             </h3>
 
             {capaUrl && (
-              <div className="relative aspect-video rounded-xl overflow-hidden border border-outline-variant/10 bg-black/5">
+              <div className="relative aspect-video rounded-xl overflow-hidden border border-outline-variant/10 bg-black/5 group">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={capaUrl}
                   alt="Pré-visualização da capa"
                   className="w-full h-full object-cover"
                 />
+                <button
+                  type="button"
+                  onClick={() => setCapaUrl("")}
+                  className="absolute top-2 right-2 bg-black/60 hover:bg-red-600 text-white rounded-full p-1 text-xs transition-colors"
+                  title="Remover Imagem"
+                >
+                  <span className="material-symbols-outlined text-[16px] block">close</span>
+                </button>
               </div>
             )}
 
+            {/* Direct Computer Upload Button */}
             <div>
+              <label className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs cursor-pointer transition-all active:scale-95 shadow-md text-center">
+                <span className="material-symbols-outlined text-[18px]">upload_file</span>
+                <span>Escolher Foto do Computador</span>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
+              </label>
+              <span className="block text-[11px] text-center text-on-surface-variant/60 mt-1.5 font-medium">
+                Suporta JPG, PNG, WebP ou AVIF de até 8MB
+              </span>
+            </div>
+
+            <div className="pt-2 border-t border-outline-variant/10">
               <label className="block text-xs font-bold text-on-surface-variant mb-1.5">
-                URL da Imagem de Capa
+                Ou digite a URL da Imagem
               </label>
               <input
                 type="text"
