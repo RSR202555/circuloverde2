@@ -117,11 +117,11 @@ export default function Footer() {
             Sede Operacional
           </div>
           <p className="text-emerald-200/60 text-sm leading-relaxed">
-            Av. Agroindustrial, 2500
+            Av. Pres. Dutra, 911 - Centro
             <br />
-            Distrito Industrial - Rio Verde, GO
+            Feira de Santana - BA
             <br />
-            CEP: 75900-000
+            CEP: 44001-425
             <br />
             <br />
             <span className="text-emerald-400 font-bold block mb-2">
